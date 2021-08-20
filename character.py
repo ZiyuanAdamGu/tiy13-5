@@ -8,7 +8,7 @@ class Character():
         self.screen = screen
         self.catch = catch
         # Load the character image, and get its rect.
-        original_image = pygame.image.load(os.path.join('images', '53.png'))
+        original_image = pygame.image.load(os.path.join('character.png'))
         self.image = pygame.transform.rotozoom(original_image, 0, 0.15)
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()

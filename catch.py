@@ -30,7 +30,7 @@ def run_game():
 
     # Start the main loop for the game.
     while True:
-        gf.check_events(catch, screen, character, ball)
+        gf.check_events(screen, character, ball)
         
         if stats.game_active:
             character.update()
