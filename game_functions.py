@@ -35,7 +35,7 @@ def check_events(catch, screen, character):
 def update_screen(catch, screen, character, balls):
     """Update images on the screen, and flip to the new screen."""
     # Redraw the screen, each pass through the loop.
-    screen.fill(catch.bg_color)
+    
         
     
 def character_hit(catch, stats, screen, character, balls):

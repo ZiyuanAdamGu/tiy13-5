@@ -8,8 +8,6 @@ class Character():
         """Initialize the character, and set its starting position."""
         self.screen = screen
         self.catch = catch
-        """Create self.fill to colour screen."""
-        self.fill = fill
         # Load the character image, and get its rect.
         original_image = pygame.image.load(os.path.join('character.png'))
         self.image = pygame.transform.rotozoom(original_image, 0, 0.15)
