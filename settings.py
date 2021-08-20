@@ -10,7 +10,7 @@ class Settings():
         
         # Character settings.
         self.character_speed_factor = 1.5
-        self.charascter_limit = 3
+        self.character_limit = 3
 
         # Ball settings.
         self.ball_speed_factor = 0.25
