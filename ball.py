@@ -3,7 +3,7 @@ from pygame.sprite import Sprite
 import os
 
 class Ball(Sprite):
-    """A class to represent a single ball in the fleet."""
+    """A class to represent a ball object."""
 
     def __init__(self, ai_settings, screen):
         """Initialize the ball, and set its starting position."""
@@ -12,19 +12,19 @@ class Ball(Sprite):
         self.ai_settings = ai_settings
 
         # Load the ball image, and set its rect attribute.
-        original_image = pygame.image.load(os.path.join('images', 'ball.bmp'))        
+        original_image = pygame.image.load(os.path.join('images', 'ball.png'))        
         self.image = pygame.transform.rotozoom(original_image, 0, 0.4)
         self.rect = self.image.get_rect()
 
-        # Start each new alien near the top left of the screen.
+        # Start ball near the top left of the screen.
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
 
-        # Store the alien's exact position.
+        # Store the ball's exact position.
         self.x = float(self.rect.x)
         
     def check_edges(self):
-        """Return True if alien is at edge of screen."""
+        """Return True if ball is at edge of screen."""
         screen_rect = self.screen.get_rect()
         if self.rect.right >= screen_rect.right:
             return True
@@ -32,11 +32,11 @@ class Ball(Sprite):
             return True
         
     def update(self):
-        """Move the alien right or left."""
-        self.x += (self.ai_settings.alien_speed_factor *
-                        self.ai_settings.fleet_direction)
+        """Move the ball right or left."""
+        self.x += (self.ai_settings.ball_speed_factor *
+                        self.ai_settings.ball_direction)
         self.rect.x = self.x
 
     def blitme(self):
-        """Draw the alien at its current location."""
+        """Draw the ball at its current location."""
         self.screen.blit(self.image, self.rect)

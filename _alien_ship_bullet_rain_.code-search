@@ -1,0 +1,39 @@
+# Query: (?:alien|ship|bullet|rain)
+# Flags: RegExp
+
+32 results - 4 files
+
+\catch.py:
+   6: from character import Character
+  25:     # Make a ship, a group of bullets, and a group of aliens.
+
+\character.py:
+   4: class Ship():
+   7:         """Initialize the ship, and set its starting position."""
+  10:         # Load the ship image, and get its rect.
+  16:         # Start each new ship at the bottom center of the screen.
+  20:         # Store a decimal value for the ship's center.
+  27:     def center_ship(self):
+  28:         """Center the ship on the screen."""
+  32:         """Update the ship's position, based on movement flags."""
+  33:         # Update the ship's center value, not the rect.
+  35:             self.center += self.ai_settings.ship_speed_factor
+  37:             self.center -= self.ai_settings.ship_speed_factor
+  43:         """Draw the ship at its current location."""
+
+\game_functions.py:
+  15:         fire_bullet(ai_settings, screen, character, bullets)
+  43: def check_ball_collisions(ai_settings, screen, character, balls, bullets):
+  44:     """Respond to bullet-ball collisions."""
+  45:     # Remove any bullets and balls that have collided.
+  46:     collisions = pygame.sprite.groupcollide(bullets, balls, True, True)
+  64: def check_balls_bottom(ai_settings, stats, screen, character, balls, bullets):
+  70:             character_hit(ai_settings, stats, screen, character, balls, bullets)
+  73: def update_balls(ai_settings, stats, screen, character, balls, bullets):
+  77:         character_hit(ai_settings, stats, screen, character, balls, bullets)
+  80:     check_balls_bottom(ai_settings, stats, screen, character, balls, bullets)
+
+\game_stats.py:
+   2:     """Track statistics for Alien Invasion."""
+   9:         # Start Alien Invasion in an active state.
+  14:         self.ships_left = self.ai_settings.ship_limit
