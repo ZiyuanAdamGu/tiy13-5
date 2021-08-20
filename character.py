@@ -1,5 +1,6 @@
 import pygame
 import os
+from settings import Settings
 
 class Character():
 
