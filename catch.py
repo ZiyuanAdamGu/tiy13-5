@@ -11,19 +11,19 @@ import game_functions as gf
 def run_game():
     # Initialize pygame, settings, and screen object.
     pygame.init()
-    ai_settings = Settings()
+    catch = Settings()
     screen = pygame.display.set_mode(
-        (ai_settings.screen_width, ai_settings.screen_height))
+        (catch.screen_width, catch.screen_height))
     pygame.display.set_caption("Catch Game")
     
     # Create an instance to store game statistics.
-    stats = GameStats(ai_settings)
+    stats = GameStats(catch)
     
     # Set the background color.
     bg_color = (230, 230, 230)
     
     # Make a character, and a ball.
-    character = Character(ai_settings, screen)
+    character = Character(catch, screen)
     ball = Group()
 
     # Background sprites
@@ -34,8 +34,8 @@ def run_game():
         
         if stats.game_active:
             character.update()
-            gf.update_ball(ai_settings, stats, screen, character, ball)
+            gf.update_ball(catch, stats, screen, character, ball)
         
-        gf.update_screen(ai_settings, screen, character, ball, None)
+        gf.update_screen(screen, character, ball, None)
 
 run_game()

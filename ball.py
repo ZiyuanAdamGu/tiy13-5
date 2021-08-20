@@ -5,11 +5,11 @@ import os
 class Ball(Sprite):
     """A class to represent a ball object."""
 
-    def __init__(self, ai_settings, screen):
+    def __init__(self, catch, screen):
         """Initialize the ball, and set its starting position."""
         super(Ball, self).__init__()
         self.screen = screen
-        self.ai_settings = ai_settings
+        self.catch = catch
 
         # Load the ball image, and set its rect attribute.
         original_image = pygame.image.load(os.path.join('images', 'ball.png'))        
@@ -33,8 +33,8 @@ class Ball(Sprite):
         
     def update(self):
         """Move the ball right or left."""
-        self.x += (self.ai_settings.ball_speed_factor *
-                        self.ai_settings.ball_direction)
+        self.x += (self.catch.ball_speed_factor *
+                        self.catch.ball_direction)
         self.rect.x = self.x
 
     def blitme(self):

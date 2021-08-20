@@ -1,9 +1,9 @@
 class GameStats():
     """Track statistics for Catch."""
     
-    def __init__(self, ai_settings):
+    def __init__(self, catch):
         """Initialize statistics."""
-        self.ai_settings = ai_settings
+        self.catch = catch
         self.reset_stats()
         
         # Start Catch in an active state.
@@ -11,4 +11,4 @@ class GameStats():
         
     def reset_stats(self):
         """Initialize statistics that can change during the game."""
-        self.characters_left = self.ai_settings.character_limit
+        self.characters_left = self.catch.character_limit
