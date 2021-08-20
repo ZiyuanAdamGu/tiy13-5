@@ -61,14 +61,14 @@ def check_balls_bottom(ai_settings, stats, screen, character, balls):
             character_hit(ai_settings, stats, screen, character, balls)
             break
           
-def update_ball(ai_settings, stats, screen, character, balls, bullets):
+def update_ball(ai_settings, stats, screen, character, balls):
     
     # Look for ball-character collisions.
     if pygame.sprite.spritecollideany(character, balls):
-        character_hit(ai_settings, stats, screen, character, balls, bullets)
+        character_hit(ai_settings, stats, screen, character, balls)
 
     # Look for balls hitting the bottom of the screen.
-    check_balls_bottom(ai_settings, stats, screen, character, balls, bullets)
+    check_balls_bottom(ai_settings, stats, screen, character, balls)
             
     
 def create_ball(ai_settings, screen, balls):
